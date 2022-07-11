@@ -8,7 +8,7 @@ import { Navigation, NavigationContextData, NavigationsProviderProps } from "./t
 const NavigationContext = createContext<NavigationContextData>({} as NavigationContextData)
 
 export const NavigationProvider = ({children}: NavigationsProviderProps) => {
-    const [theme, setTheme] = useState<string>(dark)
+    const [theme, setTheme] = useState<string>(light)
     const [search, setSearch] = useState('')
     const [navigation, setNavigation] = useState<Navigation[]>(navConfig)
 
