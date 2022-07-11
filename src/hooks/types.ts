@@ -1,4 +1,4 @@
-import { FormEvent, ReactNode } from "react"
+import { ChangeEventHandler, FormEvent, ReactNode } from "react"
 
 export interface Navigation {
     Id: number
@@ -12,7 +12,7 @@ export interface Navigation {
 
 export interface NavigationContextData {
     navigation: Navigation[]
-    handleSearch: (event: FormEvent<HTMLInputElement>) => void
+    handleSearch: ChangeEventHandler<HTMLInputElement>
     handleToggleTheme: () => void
     theme: string
 }

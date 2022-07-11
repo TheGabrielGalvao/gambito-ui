@@ -1,12 +1,14 @@
-import { ChangeEventHandler } from "react"
+import { ChangeEventHandler, FormEvent, HTMLInputTypeAttribute } from "react"
 
-export interface InputProps extends HTMLInputElement {
+export interface InputProps{
     handleChange: ChangeEventHandler<HTMLInputElement>
+    placeholder: string
+    type: HTMLInputTypeAttribute
 }
 
 
-export const CustomInput = ({...props}: InputProps) => {
+export const CustomInput = ({type, placeholder, handleChange }: InputProps) => {
     return (
-        <input onChange={props.handleChange} {...props} />
+        <input onChange={handleChange} type={type} placeholder={placeholder} />
     )
 }
