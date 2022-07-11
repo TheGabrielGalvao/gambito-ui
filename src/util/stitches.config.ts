@@ -3,13 +3,25 @@ import {createStitches} from '@stitches/react'
 export const {styled, css, globalCss, createTheme} = createStitches({
     theme: {
         colors: {
-            bodyColor: '#E4E9F7',
-            sidebarColor: '#FFF',
+            defaultColor: '',
             primaryColor: '#695CFE',
             primaryColorLight: '#F6F5FF',
-            toggleColor: '#DDD',
+            secondaryColor: '',
+            dangerColor: '',
+            successColor: '',
+            warningColor: '',
+            infoColor: '',
+            titleColor: '',
             textColor: '#707070',
+            moduleIconColor: '',
+            shadowColor: '',
+            moduleIconActiveColor: '#FFF',
+            bodyColor: '#E4E9F7',
+            sidebarColor: '#FFF',
+            toggleBackgroundColor: '#DDD',
+            toggleColor: '#DDD',
             white: '#fff',
+
         },
         transitions: {
             tran02: 'all 0.2s ease',
@@ -24,33 +36,50 @@ export const {styled, css, globalCss, createTheme} = createStitches({
             width: value
         })
     }
-    // media: {
-    //     sm: '(max-width: 480px)'
-    // },
-    // theme: {
-    //     space: {
-    //         1: '10px',
-    //         2: '20px',
-    //         3: '80px',
-    //     }
-    // },
-    // utils: {
-    //     px: (value: number) => ({
-    //         padding: value
-    //     })
-    // }
 })
 
 export const light = createTheme({})
 
 export const dark = createTheme({
     colors: {
+        defaultColor: '',
+        primaryColor: '#3a3b3c',
+        secondaryColor: '',
+        dangerColor: '',
+        successColor: '',
+        warningColor: '',
+        infoColor: '',
+        titleColor: '',
+        textColor: '#fff',
+        moduleIconColor: '',
+        shadowColor: '',
+        moduleIconActiveColor: '#FFF',
         bodyColor: '#18191a',
         sidebarColor: '#242526',
-        primaryColor: '#3a3b3c',
         primaryColorLight: '#3a3b3c',
+        toggleBackgroundColor: '#DDD',
         toggleColor: '#fff',
-        textColor: '#ccc',
     }
 })
 
+
+export const globalStyles = globalCss({
+    '*': {
+        margin: 0,
+        padding: 0,
+        boxSizing: 'border-box',
+        fontFamily: 'Poppins, sans-serif',
+    },
+
+    body: {
+        minHeight: '100vh',
+        backgroundColor: '$bodyColor',
+        transition: '$tran05',
+        color: '$textColor'
+    },
+
+    '::selection': {
+        backgroundColor: '$primaryColor',
+        color: '$white',
+    }
+})

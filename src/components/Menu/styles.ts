@@ -38,7 +38,7 @@ export const StyledMenu = styled("nav", {
             height: 25,
             width: 25,
             backgroundColor: '$primaryColor',
-            color: '$sidebarColor',
+            color: '$textColor',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
@@ -68,37 +68,6 @@ export const StyledMenu = styled("nav", {
                 }
             }
         }
-    }
-})
-
-export const MenuLogo = styled("div", {
-    display: 'flex',
-    alignItems: 'center',
-    padding: 10,
-    // justifyContent: "center",
-    gap: 12,
-    
-    '& span img': {
-        maxWidth: 40,
-        borderRadius: 6,
-    },
-    '& div': {
-        display: 'flex',
-        flexDirection: "column",
-        flexWrap: "wrap",
-        justifyContent: "flex-start",
-        alignItems: 'flex-start',
-        maxHeight: 55
-    },
-    '.name': {
-        marginTop: -10,
-        fontSize: 18,
-        fontWeight: 600,
-    },
-    '.profession': {
-        fontSize: 15,
-        marginTop: -2,
-        // display: 'block',
     }
 })
 
@@ -166,16 +135,17 @@ export const MenuItem = styled("li", {
             active: {
                 a: {
                     backgroundColor: '$primaryColor',
-                    
+                    border: '1px solid $white',   
+
                     '& svg, & .text': {
-                        color: '$sidebarColor',
+                        color: '$moduleIconActiveColor'
                     },
 
                     '&:hover': {
                         background: '$primaryColor',
                     },
                     '&:hover svg, &:hover .text': {
-                        color: '$sidebarColor'
+                        color: '$moduleIconActiveColor'
                     },
                 }
             },
@@ -184,9 +154,10 @@ export const MenuItem = styled("li", {
                     backgroundColor: 'transparent',
                     '&:hover': {
                         background: '$primaryColor',
+                        border: '1px solid $white',
                     },
                     '&:hover svg, &:hover .text': {
-                        color: '$sidebarColor'
+                        color: '$moduleIconActiveColor'
                     },
                 }
             }
@@ -236,4 +207,69 @@ export const SearchBox = styled('li', {
 
 export const Utils = styled('div', {
     bottom: 20
+})
+
+export const Layout = styled('div', {
+    display: 'flex', 
+    justifyContent: 'center',
+    backgroundColor: '$bodyColor',
+    width: '100vw',
+    height: '100vh'
+})
+
+export const ThemeSwitcher = styled('li', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    listStyle: 'none',
+    width: '100%',
+    borderRadius: 6,
+    backgroundColor: "$primaryColorLight",
+    cursor: 'pointer',
+    transition: "$tran05",
+    padding: 13,
+    gap: 20,
+    
+    variants: {
+        toggle: {
+            open: {
+                '& svg': {
+                    minWidth: 20,
+                    borderRadius: 6,
+                    height: '100%',
+                    display: 'flex',
+                    fontSize: 20,
+                    color: "$textColor",
+                    transition: "$tran03"
+                },
+            },
+            close: {
+                flex: 1,
+                '& svg': {
+                    display: 'none'
+                }
+            }
+        }
+    }
+
+    
+})
+
+export const ToggleSwitch = styled('div', {
+    position: 'absolute',
+    
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 6,
+    cursor: 'pointer',
+
+    '& .switch': {
+        position: 'relative',
+        height: 22,
+        width: 40,
+        borderRadius: 25,
+        backgroundColor: '$toggleColor',
+        transition: '$tran05',
+    }
 })

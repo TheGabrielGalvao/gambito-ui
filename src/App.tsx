@@ -1,17 +1,16 @@
 import { BrowserRouter } from "react-router-dom"
 import { Menu } from "./components/Menu"
+import { NavigationProvider } from "./hooks/useNavigation"
 import { AppRoutes } from "./routes"
 import { globalStyles } from "./util/globalStyle"
 
 function App() {
   globalStyles()
   return (
-    <BrowserRouter>
-      <div style={{display: 'flex', justifyContent: 'center'}}>
+    <NavigationProvider>
         <Menu />
         <AppRoutes />
-      </div>
-    </BrowserRouter>
+    </NavigationProvider>
   )
 }
 

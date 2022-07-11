@@ -1,98 +1,32 @@
-import { Navigation, MenuItem, MenuLogo, Main, SearchBox, StyledMenu, Utils } from "./styles";
+import { Navigation, Main, SearchBox, StyledMenu, Utils, ThemeSwitcher, MenuItem, ToggleSwitch } from "./styles";
 import {
     BiChevronRight, 
-    BiHome,
-    BiBarChartAlt2,
-    BiBell,
-    BiPieChartAlt,
-    BiHeart,
-    BiWallet,
+    BiMoon, 
     BiSearch,
-    BiLogOut,
-    BiWrench,
+    BiSun,
 } from 'react-icons/bi'
 import logo from '../../assets/img/logo.png'
-import { FormEvent, useState } from "react";
-import { dark, light } from "../../util/stitches.config";
-import { INavigation } from "../types";
+import { useState } from "react";
 import { CustomNavLink } from "../CustomNavLink";
+import { useNavigation } from "../../hooks/useNavigation";
+import { MenuLogo } from "./components/MenuLogo";
+import { CustomInput } from "../CustomInput";
+import { CustomSwitch } from "../CustomSwitch";
+import { dark } from "../../util/stitches.config";
 
-
-
-const MenuList: INavigation[] = [
-    {
-        Id: 1,
-        Name: 'dashboard',
-        Label: 'Dashboard',
-        Icon: <BiHome />,
-        Position: 'main',
-        Route: '/',
-        End: true
-    },
-    {
-        Id: 2,
-        Name: 'wallets',
-        Label: 'Carteiras',
-        Icon: <BiWallet />,
-        Position: 'main',
-        Route: '/wallets'
-    },
-
-    {
-        Id: 3,
-        Name: 'adjusts',
-        Label: 'Ajustes',
-        Icon: <BiWrench />,
-        Position: 'bottom',
-        Route: '/settings'
-    },
-
-    {
-        Id: 4,
-        Name: 'logout',
-        Label: 'Logout',
-        Icon: <BiLogOut />,
-        Position: 'bottom',
-        Route: '/logout'
-    },
-]
 
 export const Menu = () => {
     const [toggle, setToggle] = useState<'open' | 'close'>('close')
-    const [theme, setTheme] = useState<string>(light)
-    const [search, setSearch] = useState('')
-    const [navigation, setNavigation] = useState<INavigation[]>(MenuList)
-
-    function handleSearchChange(event: FormEvent<HTMLInputElement>) {
-        setSearch(event.currentTarget.value.toLowerCase())
-        if(search.length > 2){
-            setNavigation([...MenuList].filter(item => item.Label.toLowerCase().indexOf(search) !== -1))
-        }
-        else{
-            setNavigation(MenuList)
-        }
-    }
+    const {navigation, handleSearch, theme} = useNavigation()
 
     const handleToggle = () => {
         setToggle(toggle === 'open' ? 'close' : 'open')
     }
 
-    const handleToggleTheme = () => {
-        setTheme(theme === light ? dark : light)
-    }
-
     return (
-        <StyledMenu toggle={toggle} className={theme}>
+        <StyledMenu toggle={toggle}>
             <header>
-                <MenuLogo>
-                    <span className="image">
-                        <img src={logo} alt="" />
-                    </span>
-                    <div className="text">
-                        <span className="name">Gambito</span>
-                        <span className="profession">React JS</span>
-                    </div>
-                </MenuLogo>
+                <MenuLogo img={logo} title="Gambito" legend="React JS" />
                 <BiChevronRight onClick={handleToggle}/>
             </header>
             
@@ -100,7 +34,7 @@ export const Menu = () => {
                 <Main>
                     <SearchBox>
                         <BiSearch onClick={handleToggle}/>
-                        <input type="text" placeholder="Search..." onChange={handleSearchChange} />
+                        <CustomInput handleChange={handleSearch} placeholder="Search..." type="text" />
                     </SearchBox>
                     {
                         navigation.map(item => (
@@ -114,6 +48,25 @@ export const Menu = () => {
                                 item.Position === 'bottom' ? <CustomNavLink Link={item} /> : ''
                         ))
                     }
+                    <MenuItem>
+                        <ThemeSwitcher toggle={toggle}>
+                            <div className="icon">
+                                {
+                                    theme === dark 
+                                    ? <BiSun />
+                                    : <BiMoon />
+                                }
+                            </div>
+                            <span className="text">
+                                {
+                                    theme === dark
+                                    ? 'Light mode'
+                                    : 'Dark mode'
+                                }
+                            </span>
+                            <CustomSwitch toggle={toggle} />
+                        </ThemeSwitcher>
+                    </MenuItem>
                 </Utils>
             </Navigation>
         </StyledMenu>
