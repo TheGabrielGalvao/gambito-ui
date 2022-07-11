@@ -19,7 +19,7 @@ export const NavigationProvider = ({children}: NavigationsProviderProps) => {
     const handleSearchChange = (event: FormEvent<HTMLInputElement>) => {
         setSearch(event.currentTarget.value.toLowerCase())
         
-        if(search.length > 2){
+        if(search.length > 1){
             setNavigation([...navConfig].filter(item => item.Label.toLowerCase().indexOf(search) !== -1))
         }
         else{

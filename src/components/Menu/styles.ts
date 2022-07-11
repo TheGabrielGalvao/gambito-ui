@@ -38,7 +38,7 @@ export const StyledMenu = styled("nav", {
             height: 25,
             width: 25,
             backgroundColor: '$primaryColor',
-            color: '$textColor',
+            color: '$toggleColor',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
@@ -227,12 +227,13 @@ export const ThemeSwitcher = styled('li', {
     backgroundColor: "$primaryColorLight",
     cursor: 'pointer',
     transition: "$tran05",
-    padding: 13,
+    padding: '13px 13px 13px 4px',
     gap: 20,
     
     variants: {
         toggle: {
             open: {
+                padding: 13,
                 '& svg': {
                     minWidth: 20,
                     borderRadius: 6,
@@ -244,7 +245,7 @@ export const ThemeSwitcher = styled('li', {
                 },
             },
             close: {
-                flex: 1,
+                padding: '13px 13px 13px 4px',
                 '& svg': {
                     display: 'none'
                 }

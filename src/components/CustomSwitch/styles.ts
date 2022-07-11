@@ -11,18 +11,14 @@ const StyledSwitch = styled(SwitchPrimitive.Root, {
           backgroundColor: "$toggleBackgroundColor",
           borderRadius: "9999px",
           position: "relative",
-          WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
-          // '&[data-state="checked"]': { backgroundColor: "$yellow" },
         },
         close: {
           all: "unset",
-          margin: '0',
-          width: 40,
+          width: 50,
           height: 20,
           backgroundColor: "$toggleBackgroundColor",
           borderRadius: "9999px",
           position: "absolute",
-          WebkitTapHighlightColor: "rgba(0, 0, 0, 0)",
         }
     }
   }
