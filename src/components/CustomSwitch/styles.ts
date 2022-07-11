@@ -33,7 +33,14 @@ const StyledThumb = styled(SwitchPrimitive.Thumb, {
   transition: "transform 100ms",
   transform: "translateX(2px)",
   willChange: "transform",
-  '&[data-state="checked"]': { transform: "translateX(19px)" }
+  '&[data-state="checked"]': { transform: "translateX(31px)" },
+
+  variants: {
+    toggle: {
+      open: {'&[data-state="checked"]': { transform: "translateX(19px)" },},
+      close: {'&[data-state="checked"]': { transform: "translateX(31px)" },}
+    }
+  }
 });
 
 export const Switch = StyledSwitch;

@@ -13,7 +13,7 @@ export const CustomSwitch = ({toggle}: Props) => {
       id="theme-switcher"
       onCheckedChange={handleToggleTheme}
     >
-      <SwitchThumb />
+      <SwitchThumb toggle={toggle} />
     </Switch>
   )
 }

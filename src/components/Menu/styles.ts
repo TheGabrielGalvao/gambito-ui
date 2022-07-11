@@ -38,7 +38,7 @@ export const StyledMenu = styled("nav", {
             height: 25,
             width: 25,
             backgroundColor: '$primaryColor',
-            color: '$toggleColor',
+            color: '$white',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
