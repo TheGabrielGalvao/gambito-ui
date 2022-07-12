@@ -8,7 +8,7 @@ export const {styled, css, globalCss, createTheme} = createStitches({
             primaryColorLight: '#F6F5FF',
             secondaryColor: '',
             dangerColor: '',
-            successColor: '',
+            successColor: '#33CC95',
             warningColor: '',
             infoColor: '',
             titleColor: '',
@@ -21,7 +21,6 @@ export const {styled, css, globalCss, createTheme} = createStitches({
             toggleBackgroundColor: '#DDD',
             toggleColor: '#DDD',
             white: '#fff',
-
         },
         transitions: {
             tran02: 'all 0.2s ease',
@@ -29,6 +28,10 @@ export const {styled, css, globalCss, createTheme} = createStitches({
             tran04: 'all 0.4s ease',
             tran05: 'all 0.5s ease',
         },
+        
+        shadows: {
+            filterStyle: 'brightness(0.9)',
+        }
 
     },
     utils: {
@@ -46,7 +49,7 @@ export const dark = createTheme({
         primaryColor: '#3a3b3c',
         secondaryColor: '',
         dangerColor: '',
-        successColor: '',
+        successColor: '#33CC95',
         warningColor: '',
         infoColor: '',
         titleColor: '',
@@ -59,6 +62,10 @@ export const dark = createTheme({
         primaryColorLight: '#3a3b3c',
         toggleBackgroundColor: '#DDD',
         toggleColor: '#fff',
+        filterStyle: 'brightness(2)',
+    },
+    shadows: {
+        filterStyle: 'brightness(2)',
     }
 })
 

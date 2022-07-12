@@ -1,22 +1,22 @@
 import { ChangeEventHandler, FormEvent, ReactNode } from "react"
 
-export interface Navigation {
+export interface App {
     Id: number
     Name: string
     Label: string
-    Icon: any
+    Icon: ReactNode
     Position: 'main' | 'bottom'
     Route: string
     End?: boolean
 }
 
-export interface NavigationContextData {
-    navigation: Navigation[]
+export interface AppContextData {
+    navigation: App[]
     handleSearch: ChangeEventHandler<HTMLInputElement>
     handleToggleTheme: () => void
     theme: string
 }
 
-export interface NavigationsProviderProps {
+export interface AppsProviderProps {
     children: ReactNode
 }

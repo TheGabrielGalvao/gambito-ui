@@ -5,19 +5,19 @@ import {
     BiSearch,
     BiSun,
 } from 'react-icons/bi'
-import logo from '../../assets/img/logo.png'
-import { useState } from "react";
+import logo from '../../../assets/img/logo.png'
 import { CustomNavLink } from "../CustomNavLink";
-import { useNavigation } from "../../hooks/useNavigation";
+import { useApp } from "../../../hooks/useApp";
 import { MenuLogo } from "./components/MenuLogo";
 import { CustomInput } from "../CustomInput";
 import { CustomSwitch } from "../CustomSwitch";
-import { dark } from "../../util/stitches.config";
+import { dark } from "../../../util/stitches.config";
+import { useState } from "react";
 
 
 export const Menu = () => {
     const [toggle, setToggle] = useState<'open' | 'close'>('close')
-    const {navigation, handleSearch, theme} = useNavigation()
+    const {navigation, handleSearch, theme} = useApp()
 
     const handleToggle = () => {
         setToggle(toggle === 'open' ? 'close' : 'open')

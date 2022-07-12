@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { NavLink, useLocation, useMatch } from "react-router-dom"
 import { MenuItem } from "../Menu/styles"
-import { INavigation } from "../types"
+import { INavigation } from "../../types"
 
 export interface CustonNavLinkProps {
     Link: INavigation

@@ -1,5 +1,5 @@
 import * as SwitchPrimitive from "@radix-ui/react-switch";
-import { styled } from "../../util/stitches.config";
+import { styled } from "../../../util/stitches.config";
 
 const StyledSwitch = styled(SwitchPrimitive.Root, {
   variants: {

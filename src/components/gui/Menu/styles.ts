@@ -1,4 +1,4 @@
-import { styled } from "../../util/stitches.config"
+import { styled } from "../../../util/stitches.config"
 
 export const StyledMenu = styled("nav", {
     position: 'fixed',
@@ -207,14 +207,6 @@ export const SearchBox = styled('li', {
 
 export const Utils = styled('div', {
     bottom: 20
-})
-
-export const Layout = styled('div', {
-    display: 'flex', 
-    justifyContent: 'center',
-    backgroundColor: '$bodyColor',
-    width: '100vw',
-    height: '100vh'
 })
 
 export const ThemeSwitcher = styled('li', {

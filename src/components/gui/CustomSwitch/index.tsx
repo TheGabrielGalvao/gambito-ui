@@ -1,4 +1,4 @@
-import { useNavigation } from "../../hooks/useNavigation";
+import { useApp } from "../../../hooks/useApp";
 import { Switch, SwitchThumb } from "./styles";
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const CustomSwitch = ({toggle}: Props) => {
-  const {handleToggleTheme} = useNavigation()
+  const {handleToggleTheme} = useApp()
   return (
     <Switch
       toggle={toggle}

@@ -1,16 +1,14 @@
 import { BrowserRouter } from "react-router-dom"
-import { Menu } from "./components/Menu"
-import { NavigationProvider } from "./hooks/useNavigation"
+import { AppProvider } from "./contexts/AppProvider"
 import { AppRoutes } from "./routes"
 import { globalStyles } from "./util/globalStyle"
 
 function App() {
   globalStyles()
   return (
-    <NavigationProvider>
-        <Menu />
+    <AppProvider>
         <AppRoutes />
-    </NavigationProvider>
+    </AppProvider>
   )
 }
 
